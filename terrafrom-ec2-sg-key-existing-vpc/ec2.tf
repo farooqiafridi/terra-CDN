@@ -72,6 +72,29 @@ module "security_group" {
   }
 
 }
+  
+  variable "sgport" {
+    type = list(number)
+    default = [443,80,22,3000 ]
+
+
+}
+#resource "aws_security_group" "Dynamic" {
+ #   name = "my-sg"
+  #  dynamic "ingress" {
+   #     for_each = var.sgport
+    #    content {
+     #       from_port = ingress.value
+      #      to_port   = ingress.value
+       #     protocol  = "tcp"
+        #    cidr_blocks = ["0.0.0.0/0"]
+        #}
+    #}
+    #  name = "dfsa"
+     #  name = "hghgk"
+    #}
+
+#}
 
 
 provider "aws" {
